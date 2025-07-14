@@ -7,7 +7,7 @@ apt update && apt install -y certbot python3-certbot-nginx
 
 ## 2. 网站根目录(/usr/share/nginx/html)创建challenge目录
 ```shell
-mkdir -p /usr/local/nginx/html/.well-known/acme-challenge/ && echo "test" > /usr/local/nginx/html/.well-known/acme-challenge/test.txt
+mkdir -p /usr/share/nginx/html/.well-known/acme-challenge/ && echo "test" > /usr/share/nginx/html/.well-known/acme-challenge/test.txt
 ```
 
 ## 3. 配置Nginx
@@ -22,7 +22,7 @@ server {
     # 添加如下内容
     location ^~ /.well-known/acme-challenge/ {
         default_type "text/plain";
-        root /usr/local/nginx/html;  # 确保路径正确
+        root /usr/share/nginx/html;  # 确保路径正确
     }
 }
 ```
