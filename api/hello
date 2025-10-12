@@ -1,0 +1,5 @@
+{
+  "code": 200 
+  "status": "OK",
+  "data": "Hello from GitHub API!"
+}
